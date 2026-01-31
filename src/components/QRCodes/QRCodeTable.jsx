@@ -1,5 +1,11 @@
-import { Edit2, Trash2, ExternalLink, CheckCircle, XCircle } from 'lucide-react';
-import { formatDate } from '../utils/dateUtils';
+import {
+  Edit2,
+  Trash2,
+  ExternalLink,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+import { formatDate } from "../utils/dateUtils";
 
 const QRCodeTable = ({ qrCodes, onEdit, onDelete, onView }) => {
   return (
@@ -34,18 +40,30 @@ const QRCodeTable = ({ qrCodes, onEdit, onDelete, onView }) => {
           {qrCodes.map((qr) => (
             <tr key={qr._id} className="hover:bg-gray-50">
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm font-medium text-gray-900">{qr.name}</div>
-                <div className="text-sm text-gray-500">{qr.description?.substring(0, 40) || 'No description'}</div>
+                <div className="text-sm font-medium text-gray-900">
+                  {qr.name}
+                </div>
+                <div className="text-sm text-gray-500">
+                  {qr.description?.substring(0, 40) || "No description"}
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">{qr.userId?.name || 'Unknown'}</div>
-                <div className="text-xs text-gray-500">{qr.userId?.email || ''}</div>
+                <div className="text-sm text-gray-900">
+                  {qr.userId?.name || "Unknown"}
+                </div>
+                <div className="text-xs text-gray-500">
+                  {qr.userId?.email || ""}
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <code className="text-sm bg-gray-100 px-2 py-1 rounded">{qr.shortId}</code>
+                <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                  {qr.shortId}
+                </code>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm font-medium text-gray-900">{qr.scanCount}</div>
+                <div className="text-sm font-medium text-gray-900">
+                  {qr.scanCount}
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 {qr.isActive ? (
